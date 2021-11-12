@@ -1,0 +1,123 @@
+@import "../../scss/colors";
+@import "../../scss/animations";
+@import "../../scss/breakpoints";
+
+.ec-products-main {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  @include md {
+    flex-direction: column;
+  }
+}
+
+.ec-products-categories {
+  width: 200px;
+  padding-top: 100px;
+  @include md {
+    display: flex;
+    padding-top: 50px;
+    width: 100%;
+    justify-content: space-between;
+  }
+  @include sm {
+    display: block;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+}
+
+.ec-products-category {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: $text_secondary;
+  text-transform: uppercase;
+  font-size: 14px;
+  border-radius: 5px;
+  &:hover {
+    background-color: rgba($black, 0.1);
+    color: $text_primary;
+  }
+  &.ec-products-category-active {
+    background-color: $primary;
+    color: $white;
+  }
+  transform: translateX(-50%);
+  opacity: 0;
+  &:nth-child(1) {
+    animation: slide 300ms ease 150ms forwards;
+  }
+  &:nth-child(2) {
+    animation: slide 300ms ease 300ms forwards;
+  }
+  &:nth-child(3) {
+    animation: slide 300ms ease 450ms forwards;
+  }
+  &:nth-child(4) {
+    animation: slide 300ms ease 600ms forwards;
+  }
+  &:nth-child(5) {
+    animation: slide 300ms ease 750ms forwards;
+  }
+}
+
+.ec-products-content {
+  width: calc(100% - 250px);
+  @include lg {
+    width: calc(100% - 220px);
+  }
+  @include md {
+    width: 100%;
+  }
+}
+
+.ec-products-title {
+  height: 80px;
+  font-size: 32px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  span {
+    display: block;
+    transform: translateY(-20%);
+    opacity: 0;
+    animation: pulse 300ms ease forwards;
+    @include sm {
+      width: 100%;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+  }
+  @include sm {
+    display: block;
+    height: unset;
+  }
+}
+
+.ec-products-all {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  @include lg {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include sm {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.ec-products-sort {
+  width: 150px;
+  @include sm {
+    width: 100%;
+  }
+}

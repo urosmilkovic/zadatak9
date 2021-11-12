@@ -1,0 +1,17 @@
+@import "../../../scss/breakpoints";
+
+.ec-cardbutton-main {
+  display: none !important;
+  position: fixed !important;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1000;
+  min-width: unset !important;
+  padding: 0px !important;
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50% !important;
+  @include md {
+    display: inline-flex !important;
+  }
+}

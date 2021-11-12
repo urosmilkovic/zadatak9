@@ -1,0 +1,21 @@
+@import "../../scss/breakpoints";
+
+.ec-home-showcase {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-row-gap: 20px;
+  grid-column-gap: 20px;
+  .ec-home-showcase-single {
+    &:first-child {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      @include lg {
+        grid-column-end: 2;
+      }
+    }
+  }
+  @include lg {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
