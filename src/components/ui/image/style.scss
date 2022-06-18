@@ -1,0 +1,36 @@
+.ec-image-main {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 300ms ease-in-out 300ms,
+      transform 300ms ease-in-out 300ms;
+    object-fit: contain;
+    object-position: center;
+    &.ec-image-loaded {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+.ec-image-loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  transition: opacity 300ms ease-in-out;
+  &.ec-image-loader-hide {
+    opacity: 0;
+  }
+}
